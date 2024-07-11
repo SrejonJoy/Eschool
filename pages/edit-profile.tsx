@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from '../styles/EditProfilePage.module.css';
 
 const EditProfilePage = () => {
   const [formData, setFormData] = useState({
@@ -52,14 +53,17 @@ const EditProfilePage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
-      <input name="id" value={formData.id} onChange={handleChange} placeholder="ID" required />
-      <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
-      <input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required />
-      <input name="address" value={formData.address} onChange={handleChange} placeholder="Address" required />
-      <button type="submit">Save Changes</button>
-    </form>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Edit Profile</h1>
+      <form onSubmit={handleSubmit}>
+        <input name="name" value={formData.name} onChange={handleChange} className={styles.inputField} placeholder="Name" required />
+        <input name="id" value={formData.id} onChange={handleChange} className={styles.inputField} placeholder="ID" required />
+        <input name="email" value={formData.email} onChange={handleChange} className={styles.inputField} placeholder="Email" required />
+        <input name="phone" value={formData.phone} onChange={handleChange} className={styles.inputField} placeholder="Phone" required />
+        <input name="address" value={formData.address} onChange={handleChange} className={styles.inputField} placeholder="Address" required />
+        <button type="submit" className={styles.submitButton}>Save Changes</button>
+      </form>
+    </div>
   );
 };
 

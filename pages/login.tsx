@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import styles from '../styles/LoginPage.module.css';
 import Link from 'next/link';
 
 const LoginPage = () => {
@@ -31,12 +32,33 @@ const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
-      <input name="password" type="password" value={formData.password} onChange={handleChange} placeholder="Password" required />
-      <button type="submit">Login</button>
-      <Link href="/forgot-password" className="btn btn-link">Forgot Password?</Link>
-    </form>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <div className={styles.formGroup}>
+          <input 
+            name="email" 
+            type="email"
+            value={formData.email} 
+            onChange={handleChange} 
+            placeholder="Email" 
+            required 
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <input 
+            name="password" 
+            type="password" 
+            value={formData.password} 
+            onChange={handleChange} 
+            placeholder="Password" 
+            required 
+          />
+        </div>
+        <div className={styles.buttonGroup}>
+          <button className={styles.loginButton} type="submit">Login</button>
+          <Link href="/forgot-password" className={styles.btnLink}>Forgot Password?</Link>
+        </div>
+      </form>
   );
 };
 
