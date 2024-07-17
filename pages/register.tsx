@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import AuthForm from '../components/AuthForm';
-import styles from '../../styles/RegistrationForm.module.css'; // Importing the CSS module
+import styles from '../styles/RegistrationForm.module.css'; // Importing the CSS module
 
 const RegisterPage = () => {
   const router = useRouter();
