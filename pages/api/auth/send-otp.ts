@@ -16,7 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   await db.collection('otps').insertOne({ email, otp, createdAt: new Date() });
 
   // Send OTP email
-  await sendEmail(email, `Your OTP code is ${otp}`);
+  await sendEmail(email,"This is Test",`Your OTP code is ${otp}`);
 
   res.status(200).json({ message: 'OTP sent' });
 };
