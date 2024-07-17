@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import styles from './styles/LoginPage.module.css';
+import styles from '../styles/LoginPage.module.css';
 import Link from 'next/link';
 
 const LoginPage = () => {
