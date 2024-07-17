@@ -1,5 +1,4 @@
 import styles from '../styles/WelcomePage.module.css';
-
 const WelcomePage = () => {
   return (
     <div className={styles.container}>
